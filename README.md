@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="assets/DM-ROOT.png" alt="DM-ROOT" width="96"><br>
+  <b>NovaMac (Stela)</b>
+</p>
+
 # NovaMac (Stela)
 
 在普通 x86-64 PC 上启动 Apple Silicon macOS 的实验性翻译层。本项目是 [Stela](https://github.com/tylertms/Stela) 的续作与品牌化分支；上游作者已于 2026-11-22 清空代码并将仓库归档，本项目保留并继续维护其 GPL-2.0 代码。
