@@ -1,0 +1,63 @@
+{
+  "schema_version": 9,
+  "kind": "stela_setup",
+  "build": "26B123",
+  "model": "Mac14,3",
+  "esp": "F:\\",
+  "volume": "G:\\",
+  "bundle_directory": "G:\\stela\\boot\\26B123",
+  "created_directories": [
+    "G:\\stela\\boot\\26B123",
+    "G:\\stela\\install\\26B123",
+    "G:\\stela\\boot",
+    "G:\\stela\\install",
+    "G:stela"
+  ],
+  "options": "--system --storage 20240102L01509:43879AD9-CFBC-D2FF-4C69-136198EC6D8A --nor 20240102L01509:43879AD9-CFBC-D2FF-4C69-136198EC6D8A --preboot 20240102L01509:43879AD9-CFBC-D2FF-4C69-136198EC6D8A --ecid 0x18c771abd9975026 --input --guest-pes 8 --wifi-prompt --guest-network\n",
+  "complete": true,
+  "stela_version": "9fbd3255b3df6828",
+  "stela_release": "0.5.0",
+  "installs": [
+    {
+      "name": "macOS",
+      "ecid": "0x18c771abd9975026",
+      "apple_region": "disk1p4",
+      "apple_region_serial": "20240102L01509",
+      "apple_region_guid": "43879AD9-CFBC-D2FF-4C69-136198EC6D8A",
+      "nor": "disk1p4",
+      "nor_serial": "20240102L01509",
+      "nor_guid": "43879AD9-CFBC-D2FF-4C69-136198EC6D8A",
+      "machine_state_offset": 137422176256
+    }
+  ],
+  "bundle_schema": 4,
+  "bundle_revision": 39,
+  "bundles": [
+    {
+      "build": "26B123",
+      "ecid": "0x18c771abd9975026",
+      "schema": 4,
+      "revision": 39,
+      "manifest_sha256": "c46938fff412cd910838a78110a780886b4b18fc1607e01fd18d4688dc8ef2ca",
+      "personalized": true,
+      "processors": 8
+    }
+  ],
+  "media": [
+    {
+      "build": "26B123",
+      "volume": "G:\\",
+      "partition_guid": "31BE27D4-9FAE-22F5-EB39-869D82A62BF5",
+      "manifest_sha256": "99dd9f9a124f31c904a8075fe42435738df7b38cf5222fc487ab3590f5eb1cb6"
+    }
+  ],
+  "verify_on_read": false,
+  "install_image": "full",
+  "medium_checked": 1028974,
+  "translations": {
+    "volume": "G:\\",
+    "pack_bytes": 1073741824,
+    "pipeline_bytes": 134217728
+  },
+  "wifi_prompt": true
+}

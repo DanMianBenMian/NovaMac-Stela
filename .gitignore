@@ -1,0 +1,9 @@
+target/
+**/target/
+*.pyc
+__pycache__/
+.DS_Store
+*.ipsw
+*.dmg
+*.part
+*.part.json
