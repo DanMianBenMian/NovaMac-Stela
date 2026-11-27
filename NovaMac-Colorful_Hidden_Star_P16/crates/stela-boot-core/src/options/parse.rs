@@ -150,6 +150,7 @@ impl ParseState<'_> {
                 options.usb_storage.push(String::from(serial));
             }
             "--guest-network" => options.guest_network = true,
+            "--no-bluetooth" => options.no_bluetooth = true,
             WIFI => {
                 let ssid = ssid(value().ok_or(Error::MissingWifiNetwork)?)?;
                 if options.ssid.replace(ssid).is_some() {

@@ -325,6 +325,10 @@ pub struct System {
     /// Give the guest a USB Ethernet adapter bridged to a host network
     /// adapter of its own (`--guest-network`).
     pub guest_network: bool,
+    /// Do not model an internal Bluetooth controller for the guest
+    /// (`--no-bluetooth`). On machines with no usable Bluetooth host this
+    /// removes the controller model's service turns from every heartbeat.
+    pub no_bluetooth: bool,
     /// Join this Wi-Fi network for the mount's network (`--wifi SSID`). The
     /// line writes `%`, whitespace and control characters as `%XX`.
     pub ssid: Option<String>,
@@ -419,11 +423,12 @@ impl Default for System {
             usb_storage: Vec::new(),
             usb4_approved: Vec::new(),
             external_disks: false,
-            guest_network: true,
+            guest_network: false,
+            no_bluetooth: false,
             ssid: None,
             wifi_key: None,
             wifi_country: None,
-            wifi_prompt: true,
+            wifi_prompt: false,
             ipv4: None,
             ipv4_gateway: None,
             dns: Vec::new(),
@@ -838,6 +843,7 @@ impl fmt::Display for System {
         }
         line.flag(EXTERNAL_DISKS, self.external_disks)?;
         line.flag("--guest-network", self.guest_network)?;
+        line.flag("--no-bluetooth", self.no_bluetooth)?;
         line.value(WIFI, self.ssid.as_deref().map(Ssid))?;
         line.value(
             WIFI_KEY,

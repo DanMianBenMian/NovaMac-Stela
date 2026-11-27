@@ -40,6 +40,7 @@
 - `ui.rs` / `status.rs` / `console.rs`：品牌名 NovaMac；启动默认静默页（阶段 `n/5` + 当前步骤），真实像素进度条（灰底蓝条，前期来回滚动、文件复制阶段按字节数填充），出错才展开日志尾部。
 - `output.rs` / `stop_record.rs` / `bundle_repair.rs` / `engine.rs`：用户可见文案统一为 NovaMac；机器解析用的 `STELA FATAL` / `STELA STOPPED` token 和 `stela log` 命令保持不变。
 - 中文菜单字形表（`console/hanzi.rs` + `hanzi16.bin`）与 WiFi 启用默认值。
+- 新增 `--no-bluetooth`：不给 guest 建模蓝牙控制器。P16 上原本的虚拟蓝牙服务曾出现 204 ms 的单次卡顿，关掉后没有该设备模型的服务轮次；需要蓝牙的研究请不要加这个开关。
 - 通用输入/网络/磁盘驱动修复：触摸板识别、网卡 link 等待缩短、r8169 步骤诊断等。
 
 ## 隐星 P16 专属内容

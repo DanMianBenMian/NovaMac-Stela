@@ -3368,7 +3368,11 @@ fn start_devices(
             // vendor commands and replies, which BlueTool's chip boot and
             // bluetoothd's bring-up do not take. It is released in the
             // loader's root by its drop. The log says so once.
-            if let Some(line) = stela_boot_core::guest_bluetooth::model_line(
+            if options.no_bluetooth {
+                output::arguments(format_args!(
+                    "GUEST BLUETOOTH off: --no-bluetooth; no controller is modeled\n"
+                ));
+            } else if let Some(line) = stela_boot_core::guest_bluetooth::model_line(
                 host_controller.is_some(),
                 options.input,
             ) {

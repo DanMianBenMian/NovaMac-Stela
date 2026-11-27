@@ -180,7 +180,7 @@ fn every_option_survives_a_round_trip() {
     let options = round_trip(&format!(
         "--system --storage {DISK} --nor {DISK} --bundle b --install p.json \
          --install-source 11111111-2222-3333-4444-555555555555 --verify-on-read \
-         --usb-storage A --usb-storage B --input --idle-skip --sep-observe --native-cores 3 \
+         --usb-storage A --usb-storage B --input --idle-skip --sep-observe --no-bluetooth --native-cores 3 \
          --native-artifacts --serialized --profile --monitor-trace --display-trace \
          --network-check http://h/p --audio-check transport-duplex --audio-own-hpet --dram-base 0x10000000000 \
          --load 0x10000004000 --entry 0x10000008000 --x0 7 --budget 99 --break 0x10 \
@@ -190,6 +190,8 @@ fn every_option_survives_a_round_trip() {
     assert_eq!(options.audio_check, Some(AudioCheck::TransportDuplex));
     assert!(options.audio_own_hpet);
     assert!(options.display_trace);
+    assert!(options.no_bluetooth);
+    assert!(!System::default().no_bluetooth);
     assert!(!System::default().display_trace);
     assert!(!options.parallel);
     assert_eq!(options.dumps[0], (Base::Register(21, -8), 0x10));

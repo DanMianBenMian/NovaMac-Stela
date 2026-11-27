@@ -37,8 +37,12 @@ to the UART and `EFI/stela/boot.log`.
 The adapter is AX211 / CNVio2 (`8086:51f0`). It is still refused by Stela's
 `Family::Ax200` setup gate, so the default-on `--wifi-prompt` does not make
 this card work. The usable network path is `--guest-network`, which bridges a
-host adapter into the guest as a USB CDC-ECM/NCM Ethernet device. Bluetooth and
-GPU acceleration are not guaranteed.
+host adapter into the guest as a USB CDC-ECM/NCM Ethernet device.
+
+`config/stela.cfg` includes `--no-bluetooth`: this machine's modeled Bluetooth
+controller caused a 204 ms service stall in a measured boot and Bluetooth is
+not functional here anyway. Remove the flag if you need the controller model.
+GPU acceleration is not guaranteed.
 
 ## Build
 
